@@ -46,6 +46,10 @@
   - Couple of folds to extract the pieces we care about, for the
     two-part answer.
 ** 02
-- Note: The game calendar rolls over at 11 PM Pacific, so apparently
-  it is based in Mountain time zone.
-- 
+- Note: The game calendar rolls over at 9 PM Pacific, so apparently
+  it is based in Eastern time zone.
+- This one was very simple, as the input parsing was much easier. Note
+  though, someone else did Day 1 just splitting on "\n\n", which would
+  indeed be simpler than what I did.
+** 03
+
