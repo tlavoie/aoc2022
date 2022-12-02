@@ -1,0 +1,51 @@
+* General
+- Thought: Try to do as many of these as possible.
+- Make the process of setting up each day's task as easy as possible.
+- Target language: Haskell
+- Not doing anything Nix-specific to start at least, just running the
+  ghc, cabal binaries I have already installed through Nix.
+  - Cabal update fetched package list from hackage.
+  - Maybe later, try updating one to Nix-specific format, then go
+    forward with that.
+* Date notes
+** 01
+- Input is single text file, one integer per line, with blank lines
+  separating lists.
+- e.g.:
+8890
+13468
+5519
+4939
+
+4580
+3529
+
+2917
+
+1329
+4004
+3553
+- Created default files with "cabal init" and mostly default values.
+- Idea: Reading all the lines should give me [ String ], which I can
+  then process to get [ [ String ] ]
+- From there, can map over the top-level list, to get a list of
+  parsed, added integers, from which I can get the max.
+  - e.g. [ [ String ] ] -> [ [ Int ] ] -> [ Int ] -> Int
+  - Alterate: [ String ] -> [ Int ] -> [ [ Int ] ] -> [ [ Int ] ] -> Int
+- For this challenge at least, there is no need to keep things in an
+  indexed or identifiable order.
+- Outer: start with empty list to accumulate into
+- Inner: start with empty list, accumulate parsed Int values until
+  empty string.
+  - Then continue with rest of full list
+- What I ended up doing was a bit simpler:
+  - One function to fetch the lines
+  - One to gather the contents according to the data pattern. (Ints
+    were converted on the fly, as they were the only valid non-empty
+    strings).
+  - Couple of folds to extract the pieces we care about, for the
+    two-part answer.
+** 02
+- Note: The game calendar rolls over at 11 PM Pacific, so apparently
+  it is based in Mountain time zone.
+- 
