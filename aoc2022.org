@@ -8,7 +8,7 @@
   - Maybe later, try updating one to Nix-specific format, then go
     forward with that.
 * Date notes
-** 01
+** 01 --- Day 1: Calorie Counting ---
 - Input is single text file, one integer per line, with blank lines
   separating lists.
 - e.g.:
@@ -45,7 +45,7 @@
     strings).
   - Couple of folds to extract the pieces we care about, for the
     two-part answer.
-** 02
+** 02 --- Day 2: Rock Paper Scissors ---
 - Note: The game calendar rolls over at 9 PM Pacific, so apparently
   it is based in Eastern time zone.
 - This one was very simple, as the input parsing was much easier. Note
