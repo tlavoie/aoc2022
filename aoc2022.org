@@ -67,3 +67,10 @@
   100 times without worrying about a partial input.
 - I was going to use "take 3" to get the inputs, but splitAt is nicer,
   and gives us the tail to do it again.
+** 04 --- Day 4: Camp Cleanup ---
+- Likely the easiest one yet, especially since I had an ancient
+  string-split routine from my LogSnort code from years ago.
+- I never did use my checkLargeSmall function, since they seem to
+  insist on providing fairly friendly inputs so far. (e.g., ranges
+  could also be valid if the first number was higher than the second,
+  but they didn't do that at all.)
