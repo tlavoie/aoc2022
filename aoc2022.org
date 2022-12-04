@@ -51,5 +51,19 @@
 - This one was very simple, as the input parsing was much easier. Note
   though, someone else did Day 1 just splitting on "\n\n", which would
   indeed be simpler than what I did.
-** 03
-
+** 03 --- Day 3: Rucksack Reorganization ---
+- Lower-case and upper-case letters provide the priority, 1-26 and
+  27-52 respectively.
+- Each line needs splitting in half, find the common letter between
+  each half, and sum these priorities.
+  - The common value sounds like turning each into a set, find the
+    intersection.
+  - The big challenge was in understanding the use of fmap to take a
+    list of Just Int values, and get a total out of that.
+- For puzzle 2, we are biting off three rows at a time from the input,
+  to find the common letter and its value, which will then be added
+  together.
+- Fortunately, we know there are 300 lines of input, so we can call it
+  100 times without worrying about a partial input.
+- I was going to use "take 3" to get the inputs, but splitAt is nicer,
+  and gives us the tail to do it again.
