@@ -40,7 +40,7 @@ checkLargeSmall :: Int -> Int -> Bool
 checkLargeSmall start end =
   start > end
 
--- Takes input like "8-41,8-79", returns ["8","41","8","79"]
+-- Takes input like "8-41,8-79", returns ((8,41),(8,79))
 parseInputLine :: String -> ((Int,Int),(Int,Int))
 parseInputLine str =
   let
