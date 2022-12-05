@@ -74,3 +74,33 @@
   insist on providing fairly friendly inputs so far. (e.g., ranges
   could also be valid if the first number was higher than the second,
   but they didn't do that at all.)
+** 05 --- Day 5: Supply Stacks ---
+- This one, reading vectors of letters, top to bottom from the top of
+  the input file is likely an excessive waste of time. The input there
+  is small enough, probably makes more sense to paste the letter
+  sequences into the code.
+- All of this is one-at-a-time popping elements off the top of each
+  stack, and pushing them on to others. If represented as lists, this
+  can be done like:
+  - "move 3 from 1 to 3" becomes:
+    - splitAt 3 list1
+      - The first part is reversed and pushed onto the front of list3
+      - The remainder is now list1.
+  - The whole data structure is a set of nine lists, which can be
+    passed around recursively.
+  - In the end, take 1 from each list, concatenate together, that's
+    the result.
+- Ended up moving to Data.Array Int [Char] for the block lists.
+  - In other words, a vector whose elements are lists of chars.
+  - This allowed me to efficiently create altered versions of the
+    supplied array, recursively, so that each only has a couple
+    changes from the one before.
+  - This would work well for board game move analysis, for example.
+- The second puzzle essentially moved the required number of blocks
+  from one stack to another as a unit, instead of one at a time,
+  e.g. reversed.
+  - Rather than create duplicate copies of a couple functions, I just
+    added a Bool to each for whether it should be inverted or not, and
+    then called the top-level one twice, with invert set to True, and
+    again set to False.
+
