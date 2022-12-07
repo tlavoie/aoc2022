@@ -104,3 +104,20 @@
     then called the top-level one twice, with invert set to True, and
     again set to False.
 
+** 06 --- Day 6: Tuning Trouble ---
+- This one has us taking a long line of text, to find the first point
+  at which four consecutive characters are all different.
+- Haskell's lazy lists may work fine, but Conduit (Snoyberg) may
+  provide useful features.
+- Basically, we'll want a 4-character wide window into the list, and
+  be able to report how far along we are when we find the target.
+- ByteString type might also be usable, being fast, efficient and
+  lazy.
+  - This looks plausible, there is a way to search with a predicate
+    function (as opposed to a fixed search string, which we do not
+    have).
+  - findIndex looks perfect for the job
+- findIndex indeed worked out well.
+- Funny glitch - when updating the code to handle different lengths of
+  sequence, adding the size parameter went awry when I switched the
+  index and the new size parameter, causing out of bounds errors.
